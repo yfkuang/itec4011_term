@@ -18,6 +18,17 @@ public class enemyMovement : MonoBehaviour
         transform.position = pos;
     }
 
+    public void setStartPosition(Vector2 vec)
+    {
+        startX = vec.x;
+        startY = vec.y;
+    }
+
+    public void ResetPosition()
+    {
+        transform.position = new Vector2(startX, startY);
+    }
+
     // Update is called once per frame
     void Update()
     {
