@@ -7,6 +7,8 @@ public class playerMovement : MonoBehaviour
     public float speed = 10f;
     public float startX = 0f;
     public float startY = -3.71f;
+    public GameObject endZone;
+    public GameObject gameManager;
 
     void Update()
     {
@@ -29,7 +31,6 @@ public class playerMovement : MonoBehaviour
             pos.x -= speed * Time.deltaTime;
         }
 
-
         transform.position = pos;
     }
 
@@ -48,6 +49,9 @@ public class playerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("GameObject1 collided with " + col.name);
+        if (col.transform.Equals(endZone.transform))
+        {
+            gameManager.GetComponent<GameManager2>().NextLevel();
+        }
     }
 }
