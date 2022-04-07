@@ -33,6 +33,17 @@ public class playerMovement : MonoBehaviour
         transform.position = pos;
     }
 
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            Vector2 pos;
+            pos.x = startX;
+            pos.y = startY;
+            transform.position = pos;
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("GameObject1 collided with " + col.name);
