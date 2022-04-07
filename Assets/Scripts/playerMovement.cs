@@ -5,6 +5,8 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
     public float speed = 10f;
+    public float startX = 0f;
+    public float startY = -3.71f;
 
     void Update()
     {
