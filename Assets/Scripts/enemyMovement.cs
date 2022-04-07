@@ -6,11 +6,16 @@ public class enemyMovement : MonoBehaviour
 {
     public GameObject Player;
     public float speed = 8f;
+    public float startX = 0f;
+    public float startY = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Vector2 pos;
+        pos.x = startX;
+        pos.y = startY;
+        transform.position = pos;
     }
 
     // Update is called once per frame
@@ -27,6 +32,14 @@ public class enemyMovement : MonoBehaviour
             pos.x += speed * Time.deltaTime;
         }
 
+        transform.position = pos;
+    }
+
+    public void resetPosition()
+    {
+        Vector2 pos;
+        pos.x = startX;
+        pos.y = startY;
         transform.position = pos;
     }
 }

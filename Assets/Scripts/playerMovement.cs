@@ -41,6 +41,8 @@ public class playerMovement : MonoBehaviour
             pos.x = startX;
             pos.y = startY;
             transform.position = pos;
+
+            //enemies = GameObject.FindGameObjectsWithTag("Enemy");
         }
     }
 
