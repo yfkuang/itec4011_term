@@ -6,6 +6,8 @@ public class GameManager2 : MonoBehaviour
 {
     public GameObject player;
     public GameObject enemy;
+    public GameObject scoreLabel;
+    int score = 0;
     public List<GameObject> enemies;
     public GameObject spawnPoint;
     public GameObject centerZone;
@@ -18,6 +20,8 @@ public class GameManager2 : MonoBehaviour
 
     public void NextLevel()
     {
+        score++;
+        scoreLabel.GetComponent<TMPro.TextMeshProUGUI>().text = score.ToString();
         Vector2 enemySpawn = centerZone.GetComponent<Detection>().calculateAverage();
         GameObject tempEnemy = Instantiate(enemy, enemySpawn, Quaternion.identity);
         tempEnemy.GetComponent<enemyMovement>().Player = player;
