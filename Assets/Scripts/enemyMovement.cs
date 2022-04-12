@@ -13,15 +13,20 @@ public class enemyMovement : MonoBehaviour
     void Start()
     {
         Vector2 pos;
-        pos.x = startX;
-        pos.y = startY;
-        transform.position = pos;
+
+        startX = transform.position.x;
+        startY = transform.position.y;
+       // pos.x = startX;
+       //pos.y = startY;
+       // transform.position = pos;
     }
 
     public void setStartPosition(Vector2 vec)
     {
+        transform.position = vec;
         startX = vec.x;
         startY = vec.y;
+
     }
 
     public void ResetPosition()

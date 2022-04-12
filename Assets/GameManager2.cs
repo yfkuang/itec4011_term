@@ -21,6 +21,7 @@ public class GameManager2 : MonoBehaviour
         Vector2 enemySpawn = centerZone.GetComponent<Detection>().calculateAverage();
         GameObject tempEnemy = Instantiate(enemy, enemySpawn, Quaternion.identity);
         tempEnemy.GetComponent<enemyMovement>().Player = player;
+        tempEnemy.GetComponent<enemyMovement>().setStartPosition(enemySpawn);
         enemies.Add(tempEnemy);
         ResetLevel();
     }

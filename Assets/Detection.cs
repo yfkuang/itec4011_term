@@ -6,7 +6,7 @@ public class Detection : MonoBehaviour
 {
 
     private List<Vector2> playerPositions;
-    Vector2 avargePosition;
+    Vector2 averagePosition;
 
     // Start is called before the first frame update
     void Start()
