@@ -12,13 +12,8 @@ public class enemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Vector2 pos;
-
         startX = transform.position.x;
         startY = transform.position.y;
-       // pos.x = startX;
-       //pos.y = startY;
-       // transform.position = pos;
     }
 
     public void setStartPosition(Vector2 vec)
@@ -39,11 +34,11 @@ public class enemyMovement : MonoBehaviour
     {
         Vector2 pos = transform.position;
 
-        if (pos.x > Player.transform.position.x)
+        if (pos.x > Player.transform.position.x && transform.position.x > startX - 3)
         {
             pos.x -= speed * Time.deltaTime;
         }
-        else if (pos.x < Player.transform.position.x)
+        else if (pos.x < Player.transform.position.x && transform.position.x < startX + 3)
         {
             pos.x += speed * Time.deltaTime;
         }
